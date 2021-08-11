@@ -21,6 +21,9 @@
   --color-one: #212121; /*SVG базовый цвет 1*/
   --color-two: #2196f3; /*SVG базовы цвет 2*/
   --color-three: #afb1b8; /*SVG базовый цвет 3 */
+
+  --anim-func: cubic-bezier(0.4, 0, 0.2, 1);
+  --anim-time: 2500ms;
 }
 
 /*ЗАГАЛЬНІ СТИЛІ*/
@@ -113,8 +116,8 @@ img {
 
 .link, .overlay, .cap-btn, .btn, .backdrop{
   transition-property: visibility, transform, opacity, box-shadow, background-color, color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: var(--anim-time);
+  transition-timing-function: var(--anim-func)
 }
 
 .icon {
@@ -300,6 +303,7 @@ footer {
   border-color: rgba(0, 0, 0, 0.5);
   opacity: 1;
   visibility: visible;
+  z-index: 1;
 }
 
 .modal {
@@ -317,6 +321,8 @@ footer {
 }
 
 .btn-close {
+  justify-content: center;
+  cursor: pointer;
   position: absolute;
   right: 8px;
   top: 8px;
